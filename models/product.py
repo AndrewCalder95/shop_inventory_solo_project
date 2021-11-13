@@ -1,9 +1,9 @@
 class Product:
-    def __init__(self, name, description, in_stock, purchase_cost, selling_price, manufacturer, id = None):
+    def __init__(self, colour, wood, in_stock, purchase_cost, selling_price, product_series, id = None):
         self.id = id
-        self.name = name
-        self.description = description
+        self.colour = colour
+        self.wood = wood
         self.in_stock = in_stock
         self.purchase_cost = purchase_cost
         self.selling_price = selling_price
-        self.manufacturer = manufacturer
+        self.product_series = product_series

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Current Inventory</h1>
+
+{% for product in products %}
+{% if product.in_stock > 0 %}
+{{ product.product_series.name }}
+
+<div>
+    <ul>
+        <li>Colour: {{ product.colour }}</li>
+        <li>Wood: {{ product.wood }}</li>
+        <li>No. in stock: {{ product.in_stock }}</li>
+        <li>Puchase Cost: £{{ product.purchase_cost }}</li>
+        <li>Selling Price: £{{ product.selling_price }}</li>
+        <a href="/edit">Edit/Update</a>
+    </ul>
+</div>
+
+{% endif %}
+{% endfor %}
+{% endblock %}
