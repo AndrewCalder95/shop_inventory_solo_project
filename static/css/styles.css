@@ -1,0 +1,6 @@
+body {
+    margin: 0px
+}
+body > header {
+    background-color: #ACC3FE;
+}
