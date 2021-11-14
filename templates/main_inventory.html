@@ -6,7 +6,7 @@
 
 {% for product in products %}
 {% if product.in_stock > 0 %}
-{{ product.product_series.name }}
+<h4>{{ product.product_series.manufacturer.name }}: {{ product.product_series.name }}</h4>
 
 <div>
     <ul>

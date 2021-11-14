@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<form action="/edit/add" method="post">
+<form action="/edit/update" method="post">
     <div>
         <label for="product_series">Series:</label>
         <select name="product_series" id="product_series">
-            {% for product_series in all_product_series %}
+        {% for product_series in all_product_series %}
         <option  value="{{product_series.id}}">{{product_series.name}}</option>   
         {% endfor %}
        </select>
@@ -25,14 +25,14 @@
     </div>
     <div>
         <label for="purchase_cost">Purchase Cost:</label>
-        <input type="number" name ="purchase_cost">
+        <input type="number" name ="product_series">
     </div>
     <div>
         <label for="selling_price">Selling Price:</label>
         <input type="number" name ="selling_price">
     </div>
 
-    <button type="submit">Add Product</button>
+    <button type="submit">Update Product</button>
 
     </form>
 

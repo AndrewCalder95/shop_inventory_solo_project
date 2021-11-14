@@ -22,9 +22,19 @@ header > nav >ul.nav > li {
 
 header > nav >ul.nav > li:hover {
     background-color: #fafafa;
+    opacity: 0.6;
 }
 
 header > nav >ul.nav > li > a {
     color: #456AC8;
     text-decoration: none;
+}
+
+footer {
+    background-color: #ACC3FE;
+    color: #456AC8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
