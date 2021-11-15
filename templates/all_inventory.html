@@ -3,18 +3,12 @@
 {% block content %}
 
 <div>
-<h1>Current Inventory</h1>
-<form action="inventory/all">
-    <button>Show out of stock</button>
-</form>
+<h1>All Inventory</h1>
 <hr>
 </div>
 
-
-
 {% for product in products %}
 <div id = "product_list">
-{% if product.in_stock > 0 %}
 <h4>{{ product.product_series.manufacturer.name }}: {{ product.product_series.name }}</h4>
 
     <ul>
@@ -27,6 +21,5 @@
 </div>
 </div>
 
-{% endif %}
 {% endfor %}
 {% endblock %}

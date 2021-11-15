@@ -17,6 +17,12 @@ def inventory():
     product_series =  product_series_repository.select_all()
     return render_template("main_inventory.html", products = products, product_series = product_series)
 
+@app.route('/inventory/all')
+def all_inventory():
+    products = product_repository.select_all()
+    product_series =  product_series_repository.select_all()
+    return render_template("all_inventory.html", products = products, product_series = product_series)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
