@@ -29,12 +29,16 @@ header > nav >ul.nav > li > a {
     color: #456AC8;
     text-decoration: none;
 }
-
+/* 
 footer {
     background-color: #ACC3FE;
     color: #456AC8;
     position: fixed;
     bottom: 0;
     width: 100%;
+    text-align: center;
+} */
+
+#add_menu {
     text-align: center;
 }

@@ -2,10 +2,9 @@
 
 {% block content %}
 
-<h1>Current Inventory</h1>
+<h1>Pick a product to update</h1>
 
 {% for product in products %}
-{% if product.in_stock > 0 %}
 <h4>{{ product.product_series.manufacturer.name }}: {{ product.product_series.name }}</h4>
 
 <div>
@@ -15,9 +14,10 @@
         <li>No. in stock: {{ product.in_stock }}</li>
         <li>Puchase Cost: £{{ product.purchase_cost }}</li>
         <li>Selling Price: £{{ product.selling_price }}</li>
+        <a href="/edit/{{product.id}}">Update</a>
     </ul>
 </div>
 
-{% endif %}
 {% endfor %}
+
 {% endblock %}
