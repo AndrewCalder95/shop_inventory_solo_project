@@ -12,7 +12,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        manufacturer = Manufacturer(result['name'], result['id'],)
+        manufacturer = Manufacturer(result['name'], result['id'])
     return manufacturer
 
 def save(manufacturer):
@@ -30,6 +30,6 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        manufacturer = Manufacturer(row['name'])
+        manufacturer = Manufacturer(row['name'], row['id'])
         manufacturers.append(manufacturer)
     return manufacturers

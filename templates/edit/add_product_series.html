@@ -5,8 +5,8 @@
 <form action="/edit/add_product_series" method="post">
     <div>
         <label for="manufacturer">Manufacturer:</label>
-        <select name="manufacturer" id="manufacturer">
-            {% for manufacturer in manufacturers %}
+        <select name="manufacturer_id" id="manufacturer">
+            {% for manufacturer in all_manufacturers %}
         <option  value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>   
         {% endfor %}
        </select>

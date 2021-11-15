@@ -13,7 +13,7 @@ def select_all():
 
     for row in results:
         product_series = product_series_repository.select(row['product_series_id'])
-        product = Product(row['colour'], row['wood'], row['in_stock'], row['purchase_cost'], row['selling_cost'], product_series)
+        product = Product(row['colour'], row['wood'], row['in_stock'], row['purchase_cost'], row['selling_price'], product_series)
         products.append(product)
     return products
 

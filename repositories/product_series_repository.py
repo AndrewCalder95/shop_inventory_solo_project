@@ -20,17 +20,17 @@ def select(id):
 def select_all():
     product_series = []
 
-    sql = f"SELECT * FROM product_series"
+    sql = "SELECT * FROM product_series"
     results = run_sql(sql)
 
     for row in results:
-        individual_product_series = Product_Series(row['name'], row['skill_level'], row['manufacturer_id'])
+        individual_product_series = Product_Series(row['name'], row['skill_level'], row['manufacturer_id'], row['id'])
         product_series.append(individual_product_series)
     return product_series
 
 
 def save(product_series):
-    sql = f"INSERT INTO product_series (name, skill_level, manufacturer_id) VALUES (%s, %s, %s) RETURNING *"
+    sql = "INSERT INTO product_series (name, skill_level, manufacturer_id) VALUES (%s, %s, %s) RETURNING *"
     values = [product_series.name, product_series.skill_level, product_series.manufacturer.id]
     results = run_sql(sql, values)
     id = results[0]['id']
