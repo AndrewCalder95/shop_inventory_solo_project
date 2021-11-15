@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<form action="/edit/add" method="post">
+<form action="/edit/add_product" method="post">
     <div>
-        <label for="product_series">Series:</label>
-        <select name="product_series" id="product_series">
-            {% for product_series in all_product_series %}
-        <option  value="{{product_series.id}}">{{product_series.name}}</option>   
+        <label for="manufacturer">Manufacturer:</label>
+        <select name="manufacturer" id="manufacturer">
+            {% for manufacturer in manufacturers %}
+        <option  value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>   
         {% endfor %}
        </select>
     </div>

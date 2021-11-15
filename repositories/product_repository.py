@@ -18,9 +18,9 @@ def select_all():
     return products
 
 def save(product):
-    sql = "INSERT INTO products (colour, wood, in_stock, purchase_cost, selling_cost, product_series) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO products (colour, wood, in_stock, purchase_cost, selling_price, product_series_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
     values = [product.colour, product.wood, product.in_stock, product.purchase_cost, product.selling_price, product.product_series.id]
-    results = run_sql(sql, values)
-    id = results[0]['id']
-    product.id = id
+    result = run_sql(sql, values)
+    id = result[0]['id']
+    product.id = id 
     return product

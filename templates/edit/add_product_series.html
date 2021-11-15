@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/edit/add_product_series" method="post">
+    <div>
+        <label for="manufacturer">Manufacturer:</label>
+        <select name="manufacturer" id="manufacturer">
+            {% for manufacturer in manufacturers %}
+        <option  value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>   
+        {% endfor %}
+       </select>
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="name" name ="name">
+    </div>
+    <div>
+        <label for="skill_level">Skill Level:</label>
+        <input type="skill_level" name ="skill_level">
+    </div>
+
+    <button type="submit">Add Product Series</button>
+
+    </form>
+
+{% endblock %}

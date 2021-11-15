@@ -29,15 +29,10 @@ def select_all():
     return product_series
 
 
-# def save(product_series):
-#     sql = "INSERT INTO product_series (name, skill_level) VALUES (%s, %s) RETURNING *"
-#     values = [product_series.name, product_series.skill_level]
-#     results = run_sql(sql, values)
-#     id = results[0]['id']
-#     product_series.id = id
-#     return product_series
-
-def update(product):
-    sql = "UPDATE products SET (colour, wood, in_stock, purchase_cost, selling_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [product.colour, product.wood, product.in_stock, product.purchase_cost, product.selling_price, product.id]
-    run_sql(sql, values)
+def save(product_series):
+    sql = f"INSERT INTO product_series (name, skill_level, manufacturer_id) VALUES (%s, %s, %s) RETURNING *"
+    values = [product_series.name, product_series.skill_level, product_series.manufacturer.id]
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    product_series.id = id
+    return product_series

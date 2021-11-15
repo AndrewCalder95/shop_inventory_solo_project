@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/edit/add_manufacturer" method="post">
+    <div>
+        <label for="name">Manufacturer name:</label>
+        <input type="text" name ="name">
+    </div>
+
+   <br>
+    <button type="submit">Add Manufacturer</button>
+
+    </form>
+
+{% endblock %}
