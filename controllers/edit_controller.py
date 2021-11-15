@@ -65,32 +65,25 @@ def add():
     product_repository.save(product)
     return redirect('/edit/add_product')
 
-# @edit_blueprint.route('/edit/update')
-# def view_product():
-    
-#     return render_template('edit/update.html')
-
-
 @edit_blueprint.route('/edit/update')
 def pick_a_product():
     products = product_repository.select_all()
     product_series =  product_series_repository.select_all()
     return render_template("edit/update/update_menu.html", products = products, product_series = product_series)
 
-@edit_blueprint.route('/edit/<id>', methods=['GET'])
-def show_product(id):
+@edit_blueprint.route('/edit/update/<id>')
+def view_product(id):
     product = product_repository.select(id)
-    return render_template('edit/show.html', product = product)
+    return render_template('edit/update/update_product.html', product = product)
 
-
-# @edit_blueprint.route('/edit/update', methods = ['GET','POST'])
-# def update_product():
-#     colour = request.form['colour']
-#     wood = request.form['wood']
-#     in_stock = request.form['in_stock']
-#     purchase_cost = request.form['purchase_cost']
-#     selling_price = request.form['selling_price']
-#     product_series = product_series_repository.select(request.form['user_id'])
-#     product = Product(colour, wood, in_stock, purchase_cost, selling_price, product_series)
-#     product.save(product)
-#     return redirect('/inverntory')
+@edit_blueprint.route('/edit/update/<id>', methods = ['POST'])
+def update_product(id):
+    colour = request.form['colour']
+    wood = request.form['wood']
+    in_stock = request.form['in_stock']
+    purchase_cost = request.form['purchase_cost']
+    selling_price = request.form['selling_price']
+    product_series = product_series_repository.select(request.form["product_series_id"])
+    product = Product(colour, wood, in_stock, purchase_cost, selling_price, product_series, id)
+    product_repository.update(product)
+    return redirect('/edit/update')
