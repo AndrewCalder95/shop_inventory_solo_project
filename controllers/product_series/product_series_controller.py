@@ -14,7 +14,7 @@ product_series_blueprint = Blueprint("product_series", __name__)
 @product_series_blueprint.route('/edit/add_product_series')
 def new_product_series():
     manufacturer = manufacturer_repository.select_all()
-    return render_template('edit/add/add_product_series.html', all_manufacturers = manufacturer)
+    return render_template('edit/add/product_series.html', all_manufacturers = manufacturer)
 
 @product_series_blueprint.route('/edit/add_product_series', methods=['POST'])
 def add_product_series():

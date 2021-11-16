@@ -18,11 +18,11 @@ def edit():
 
 @edit_blueprint.route('/edit/add_menu')
 def add_menu():
-    return render_template("edit/add/add_menu.html")
+    return render_template("edit/add/menu.html")
 
 @edit_blueprint.route('/edit/update')
 def pick_a_product():
     products = product_repository.select_all()
     product_series =  product_series_repository.select_all()
-    return render_template("edit/update/update_menu.html", products = products, product_series = product_series)
+    return render_template("edit/update/menu.html", products = products, product_series = product_series)
 

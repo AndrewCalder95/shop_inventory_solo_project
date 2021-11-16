@@ -33,7 +33,7 @@ def add():
 @product_blueprint.route('/edit/<id>/update')
 def view_product(id):
     product = product_repository.select(id)
-    return render_template('edit/update/update_product.html', product = product)
+    return render_template('edit/update/product.html', product = product)
 
 @product_blueprint.route('/edit/<id>/update', methods = ['POST'])
 def update_product(id):

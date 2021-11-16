@@ -13,7 +13,7 @@ manufacturer_blueprint = Blueprint("manufacturer", __name__)
 
 @manufacturer_blueprint.route('/edit/add_manufacturer', methods=['GET'])
 def new_manufacturer():
-    return render_template('edit/add/add_manufacturer.html')
+    return render_template('edit/add/manufacturer.html')
 
 @manufacturer_blueprint.route('/edit/add_manufacturer', methods=['POST'])
 def add_manufacturer():

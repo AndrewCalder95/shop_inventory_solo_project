@@ -18,7 +18,7 @@ def select(id):
 def select_all():
     products = []
 
-    sql = f"SELECT * FROM products"
+    sql = f"SELECT * FROM products ORDER BY purchase_cost ASC"
     results = run_sql(sql)
 
     for row in results:
