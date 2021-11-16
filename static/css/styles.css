@@ -53,15 +53,33 @@ form {
 
 #product_list {
     border: 3px solid #ACC3FE;
-    border-radius: 60px;
+    background-color: #d6e0fa;
+    border-radius: 30px;
     width: 300px;
     padding: 10px;
     display: inline-block;
     line-height: 18px;
     margin: 10px;
+
+}
+
+#titles {
     text-align: center;
+    text-decoration: underline;
 }
 
 #looped_list {
     list-style-type: none;
+}
+
+#update_product{
+    border: 3px solid #ACC3FE;
+    background-color: #d6e0fa;
+    border-radius: 30px;
+    width: 300px;
+    padding: 10px;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 18px;
+    margin: 10px;
 }

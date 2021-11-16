@@ -6,7 +6,7 @@
 
 {% for product in products %}
 <div id = "product_list">
-<h4>{{ product.product_series.manufacturer.name }}: {{ product.product_series.name }}</h4>
+    <div id = "titles"><h4>{{ product.product_series.manufacturer.name }}: {{ product.product_series.name }} ({{ product.product_series.skill_level }})</h4></div>
 
 <div>
     <ul id = "looped_list">
@@ -15,7 +15,7 @@
         <li>No. in stock: {{ product.in_stock }}</li>
         <li>Puchase Cost: £{{ product.purchase_cost }}</li>
         <li>Selling Price: £{{ product.selling_price }}</li>
-        <a href="/edit/update/{{product.id}}">Update</a>
+        <a href="/edit/{{product.id}}/update">Update</a>
     </ul>
 </div>
 </div>

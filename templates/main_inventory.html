@@ -7,7 +7,6 @@
 <form action="inventory/all">
     <button>Show out of stock</button>
 </form>
-<hr>
 </div>
 
 
@@ -15,7 +14,9 @@
 {% for product in products %}
 {% if product.in_stock > 0 %}
 <div id = "product_list">
-<h4>{{ product.product_series.manufacturer.name }}: {{ product.product_series.name }}</h4>
+<div id = "titles"> 
+    <h4>{{ product.product_series.manufacturer.name }} {{ product.product_series.name }} ({{ product.product_series.skill_level }})</h4>
+</div>
 
     <ul id = "looped_list">
         <li>Colour: {{ product.colour }}</li>

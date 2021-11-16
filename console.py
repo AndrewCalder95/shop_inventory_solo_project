@@ -11,3 +11,4 @@ import repositories.manufacturer_repository as manufacturer_repository
 # manufacturer_repository.save(manufacturer1)
 # product_series_repository.save(product_series2)
 # product_repository.save(product1)
+

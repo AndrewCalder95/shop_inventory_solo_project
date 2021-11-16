@@ -1,19 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id = "update_product">
+    <div id = "titles">    <h3>{{ product.product_series.manufacturer.name }} : {{product.product_series.name}}</h3> </div>
+<br>
 
-
-<form action="/edit/update/{{product.id}}" method="post">
-    
-    <!-- <div>
-        <label for="product_series">Product Series:</label>
-        <input type="text" name ="product_series_id" value = {{product.product_series.name}}>
-    </div> -->
-    <h3>{{ product.product_series.manufacturer.name }} : {{product.product_series.name}}</h3>
-    <br>
+<form action="/edit/{{product.id}}/update" method="post">
+    <input type="hidden" name ="product_series" value = "{{ product.product_series }}" >
     <div>
         <label for="colour">Colour:</label>
-        <input type="text" name ="colour" value = {{product.colour}} autofocus>
+        <input type="text" name ="colour" value = "{{ product.colour }}">
     </div>
     <br>
     <div>
@@ -28,18 +24,17 @@
     <br>
     <div>
         <label for="purchase_cost">Purchase Cost:</label>
-        <input type="number" name ="purchase_cost" value = "{{ product.purchase_cost}}">
+        <input type="number" name ="purchase_cost" value = "{{ product.purchase_cost }}">
     </div>
     <br>
     <div>
         <label for="selling_price">Selling Price:</label>
-        <input type="number" name ="selling_price" value = "{{ product.selling_price}}">
+        <input type="number" name ="selling_price" value = "{{ product.selling_price }}">
     </div>
     <br>
 
     <button type="submit">Update Product</button>
 
-
 </form>
-
+</div>
 {% endblock %}
