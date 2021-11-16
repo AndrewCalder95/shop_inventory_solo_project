@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS manufacturers;
 
 CREATE TABLE manufacturers (
     name VARCHAR(255),
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
+    active BOOLEAN
 );
 
 CREATE TABLE product_series (
@@ -24,10 +25,10 @@ CREATE TABLE products (
     product_series_id INT REFERENCES product_series(id) ON DELETE CASCADE
 );
 
-INSERT INTO manufacturers (name) VALUES ('DW');
-INSERT INTO manufacturers (name) VALUES ('Pearl');
-INSERT INTO manufacturers (name) VALUES ('Mapex');
-INSERT INTO manufacturers (name) VALUES ('Ludwig');
+INSERT INTO manufacturers (name, active) VALUES ('DW', True);
+INSERT INTO manufacturers (name, active) VALUES ('Pearl', True);
+INSERT INTO manufacturers (name, active) VALUES ('Mapex', True);
+INSERT INTO manufacturers (name, active) VALUES ('Ludwig', True);
 
 
 INSERT INTO product_series (name, skill_level, manufacturer_id) VALUES ('Design', 'Intermediate', 1);
