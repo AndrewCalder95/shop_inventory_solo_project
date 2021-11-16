@@ -31,15 +31,7 @@ header > nav >ul.nav > li > a {
     color: #456AC8;
     text-decoration: none;
 }
-/* 
-footer {
-    background-color: #ACC3FE;
-    color: #456AC8;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-} */
+
 
 #add_menu {
     text-align: center;
@@ -60,6 +52,8 @@ footer {
 
 #product_list {
     border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color:#adeaff;
     width: 300px;
     padding: 10px;
     display: inline-block;

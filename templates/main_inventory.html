@@ -21,7 +21,7 @@
         <li>Colour: {{ product.colour }}</li>
         <li>Wood: {{ product.wood }}</li>
         {% if product.in_stock  <= 3%}
-        <li style = "color: orange; font-weight: bold">No. in stock: {{ product.in_stock }} (Low Stock) <img src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/warning_26a0-fe0f.png" alt="warning" width = 15px></li>
+        <li style = "color: orange; font-weight: bold">No. in stock: {{ product.in_stock }} (Low Stock) <img src="/static/img/low_stock_warning.png" alt="low_stock" width = 15px></li>
         {% else %}
         <li> No. in stock: {{ product.in_stock }}</li>
         {% endif %}
