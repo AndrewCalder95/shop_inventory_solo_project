@@ -25,4 +25,4 @@ def add_product_series():
     manufacturer = manufacturer_repository.select(manufacturer_id)
     product_series = Product_Series(name, skill_level, manufacturer)
     product_series_repository.save(product_series)
-    return redirect ('/edit/add_product_series')
+    return redirect ('/inventory')

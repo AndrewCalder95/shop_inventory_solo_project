@@ -5,11 +5,11 @@
 
 <form action="/edit/update/{{product.id}}" method="post">
     
-    <br>
-    <div>
+    <!-- <div>
         <label for="product_series">Product Series:</label>
-        <input type="text" name ="product_series_id" value = {{product.product_series.id}}>
-    </div>
+        <input type="text" name ="product_series_id" value = {{product.product_series.name}}>
+    </div> -->
+    <h3>{{ product.product_series.manufacturer.name }} : {{product.product_series.name}}</h3>
     <br>
     <div>
         <label for="colour">Colour:</label>

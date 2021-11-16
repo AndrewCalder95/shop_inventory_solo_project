@@ -26,19 +26,3 @@ def pick_a_product():
     product_series =  product_series_repository.select_all()
     return render_template("edit/update/update_menu.html", products = products, product_series = product_series)
 
-@edit_blueprint.route('/edit/update/<id>')
-def view_product(id):
-    product = product_repository.select(id)
-    return render_template('edit/update/update_product.html', product = product)
-
-@edit_blueprint.route('/edit/update/<id>', methods = ['POST'])
-def update_product(id):
-    colour = request.form['colour']
-    wood = request.form['wood']
-    in_stock = request.form['in_stock']
-    purchase_cost = request.form['purchase_cost']
-    selling_price = request.form['selling_price']
-    product_series = product_series_repository.select(request.form["product_series_id"])
-    product = Product(colour, wood, in_stock, purchase_cost, selling_price, product_series, id)
-    product_repository.update(product)
-    return redirect('/edit/update')

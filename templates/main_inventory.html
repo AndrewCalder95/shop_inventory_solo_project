@@ -17,7 +17,7 @@
 <div id = "product_list">
 <h4>{{ product.product_series.manufacturer.name }}: {{ product.product_series.name }}</h4>
 
-    <ul>
+    <ul id = "looped_list">
         <li>Colour: {{ product.colour }}</li>
         <li>Wood: {{ product.wood }}</li>
         {% if product.in_stock  <= 3%}

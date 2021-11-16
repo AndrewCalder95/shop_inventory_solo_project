@@ -5,8 +5,10 @@ body {
 }
 
 header {
-    background-color: #ACC3FE;
+    /* background-color: #ACC3FE; */
     font-family: 'Bungee Shade', cursive;
+    background-image: url(/static/img/header_image.jpg);
+    background-repeat: no-repeat;
     color: #456AC8;
     font-size: large;
     text-align: center;
@@ -35,18 +37,18 @@ header > nav >ul.nav > li > a {
     text-decoration: none;
 }
 
-
-#frontpage {
-    display: flex;
-    padding: 20px
+form {
+    margin: 10px;
 }
 
-#front_page_image {
-    flex: 34%
+
+#frontpage {
+    display: inline-flex;
+    padding: 20px;
 }
 
 #front_page_text {
-    flex: 66%
+    margin: 30px
 }
 
 #product_list {
@@ -57,4 +59,9 @@ header > nav >ul.nav > li > a {
     display: inline-block;
     line-height: 18px;
     margin: 10px;
+    text-align: center;
+}
+
+#looped_list {
+    list-style-type: none;
 }

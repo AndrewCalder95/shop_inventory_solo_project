@@ -21,4 +21,4 @@ def add_manufacturer():
     manufacturer = Manufacturer(name)
     if name != "":
         manufacturer_repository.save(manufacturer)
-    return redirect ('/edit/add_manufacturer')
+    return redirect ('/edit/add_menu')

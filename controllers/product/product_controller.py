@@ -26,4 +26,21 @@ def add():
     product_series = product_series_repository.select(request.form["product_series_id"])
     product = Product(colour, wood, in_stock, purchase_cost, selling_price, product_series)
     product_repository.save(product)
-    return redirect('/edit/add_product')
+    return redirect('/edit/add_menu')
+
+
+@product_blueprint.route('/edit/update/<id>')
+def view_product(id):
+    product = product_repository.select(id)
+    return render_template('edit/update/update_product.html', product = product)
+
+@product_blueprint.route('/edit/update/<id>', methods = ['POST'])
+def update_product(id):
+    colour = request.form['colour']
+    wood = request.form['wood']
+    in_stock = request.form['in_stock']
+    purchase_cost = request.form['purchase_cost']
+    selling_price = request.form['selling_price']
+    product = Product(colour, wood, in_stock, purchase_cost, selling_price, id)
+    product_repository.update(product)
+    return redirect('/edit/update')
