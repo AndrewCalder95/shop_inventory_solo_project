@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 0px;
     padding: 20px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -8,7 +8,7 @@ header {
     background-color: #ACC3FE;
     color: #456AC8;
     text-align: center;
-    padding: 0;
+    padding: 10px;
 }
 
 
@@ -61,7 +61,6 @@ footer {
 #product_list {
     border: 1px solid #ccc;
     width: 300px;
-    min-height: 68px;
     padding: 10px;
     display: inline-block;
     line-height: 18px;

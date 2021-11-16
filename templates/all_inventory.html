@@ -4,6 +4,9 @@
 
 <div>
 <h1>All Inventory</h1>
+<form action="/inventory">
+    <button>Back to in stock only</button>
+</form>
 <hr>
 </div>
 
@@ -14,7 +17,13 @@
     <ul>
         <li>Colour: {{ product.colour }}</li>
         <li>Wood: {{ product.wood }}</li>
-        <li>No. in stock: {{ product.in_stock }}</li>
+        {% if product.in_stock  < 1  %}
+        <li style = "color: red; font-weight: bold">No. in stock: {{ product.in_stock }} (Out of stock) <img src="https://toppng.com/uploads/preview/red-x-red-x-11563060665ltfumg5kvi.png" alt="warning" width = 15px></li>
+        {% elif product.in_stock  <= 4 %}
+        <li style = "color: orange; font-weight: bold">No. in stock: {{ product.in_stock }} (Low Stock) <img src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/warning_26a0-fe0f.png" alt="warning" width = 15px></li>
+        {% else %}
+        <li> No. in stock: {{ product.in_stock }}</li>
+        {% endif %}
         <li>Puchase Cost: £{{ product.purchase_cost }}</li>
         <li>Selling Price: £{{ product.selling_price }}</li>
     </ul>
