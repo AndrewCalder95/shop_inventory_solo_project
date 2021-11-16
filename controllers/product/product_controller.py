@@ -14,7 +14,7 @@ product_blueprint = Blueprint("product", __name__)
 @product_blueprint.route('/edit/add_product', methods=['GET'])
 def new_product():
     product_series = product_series_repository.select_all()
-    return render_template('edit/add/add_product.html', users=product, all_product_series = product_series)
+    return render_template('edit/add/add_product.html', all_product_series = product_series)
  
 @product_blueprint.route('/edit/add_product', methods = ['POST'])
 def add():

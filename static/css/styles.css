@@ -1,12 +1,14 @@
 body {
     margin: 0px;
     padding: 20px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "karla";
 }
 
 header {
     background-color: #ACC3FE;
+    font-family: 'Bungee Shade', cursive;
     color: #456AC8;
+    font-size: large;
     text-align: center;
     padding: 10px;
 }
@@ -15,6 +17,7 @@ header {
 header > nav > ul.nav {
     padding-left: 0px;
     background-color: #B6E5F3;;
+    font-family: "karla";
     text-align: center;
 }
 header > nav >ul.nav > li {
@@ -33,10 +36,6 @@ header > nav >ul.nav > li > a {
 }
 
 
-#add_menu {
-    text-align: center;
-}
-
 #frontpage {
     display: flex;
     padding: 20px
@@ -51,12 +50,11 @@ header > nav >ul.nav > li > a {
 }
 
 #product_list {
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    background-color:#adeaff;
+    border: 3px solid #ACC3FE;
+    border-radius: 60px;
     width: 300px;
     padding: 10px;
     display: inline-block;
     line-height: 18px;
-    margin-bottom: 10px;
+    margin: 10px;
 }
