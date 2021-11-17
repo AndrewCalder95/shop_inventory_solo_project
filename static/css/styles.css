@@ -12,6 +12,11 @@ header {
     font-size: large;
     text-align: center;
     padding: 10px;
+    overflow: hidden;
+}
+
+header > img {
+    padding: 20px;
 }
 
 
