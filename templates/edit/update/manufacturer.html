@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for manufacturer in manufacturers %}
+
+<div>
+<p>Name: {{manufacturer.name}}</p>
+{% if manufacturer.active_status == True %}
+Active: <img src="/static/img/Active.png" alt="active" width ="20px" >
+<form action="manufacturer">
+<button>Deactivate?</button>
+{% else %}
+Active: <img src="/static/img/out_of_stock_warning.png" alt="deactive" width ="20px" >
+<form action="manufacturer">
+    <button>Activate?</button>
+{% endif %}
+</form>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

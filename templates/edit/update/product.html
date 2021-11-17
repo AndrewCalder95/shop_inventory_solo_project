@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id = "product_container">
 <div id = "update_product">
     <div id = "titles">    <h3>{{ product.product_series.manufacturer.name }} : {{product.product_series.name}}</h3> </div>
 <br>
@@ -38,8 +39,9 @@
 </form>
 
 <form  action="/edit/{{product.id}}/delete" method = "post">
-    <button style="color:red"> Delete Product</button>
+    <button style="color:red" onclick="return confirm('Are you sure? This action cannot be undone!')"> Delete Product </button>
 </form>
+</div>
 </div>
 </form>
 {% endblock %}

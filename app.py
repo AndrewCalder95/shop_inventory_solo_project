@@ -3,6 +3,7 @@ from models.manufacturer import Manufacturer
 from models.product_series import Product_Series
 from repositories import product_repository
 from repositories import product_series_repository 
+from repositories import manufacturer_repository 
 from controllers.edit_controller import edit_blueprint
 from controllers.manufacturer.manufacturer_controller import manufacturer_blueprint
 from controllers.product_series.product_series_controller import product_series_blueprint
@@ -21,13 +22,21 @@ def home():
 def inventory():
     products = product_repository.select_all()
     product_series =  product_series_repository.select_all()
-    return render_template("main_inventory.html", products = products, product_series = product_series)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("main_inventory.html", products = products, all_product_series = product_series, all_manufacturers = manufacturers)
 
 @app.route('/inventory/all')
 def all_inventory():
     products = product_repository.select_all()
     product_series =  product_series_repository.select_all()
     return render_template("all_inventory.html", products = products, product_series = product_series)
+
+@app.route('/inventory/<id>')
+def view_filtered_inventory(id):
+    manufacturer = manufacturer_repository.select(id)
+    products = product_repository.select_all()
+    product_series =  product_series_repository.select_all()
+    return render_template("filtered_inventory.html", manufacturer = manufacturer, products = products, all_product_series = product_series)
 
 
 if __name__ == '__main__':

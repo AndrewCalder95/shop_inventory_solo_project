@@ -2,31 +2,28 @@
 
 {% block content %}
 
-<div id = "header_container">
-<div id = "header_title"><h1>Current Inventory</h1></div>
-<div id = "stock_filter"><form action="inventory/all"><button>Show Out of Stock</button></form></div>
+<div>
+<h1>{{ manufacturer.name }}</h1>
+<form action="/inventory">
+    <button>Back to Current Inventory</button>
+</form>
 </div>
-
-<div id = "inventory_filter">
-    <p>Filter by:</p>
-    {% for manufacturer in all_manufacturers %}
-        <form action="/inventory/{{ manufacturer.id }}"><button>{{ manufacturer.name }}</button></form>
-    {% endfor %}
-</div>
-
 
 
 {% for product in products %}
-{% if product.in_stock > 0 %}
+
+{% if manufacturer.id == product.product_series.manufacturer.id %}
 <div id = "product_list_main">
-<div id = "titles"> 
-    <h4>{{ product.product_series.manufacturer.name }} {{ product.product_series.name }} ({{ product.product_series.skill_level }})</h4>
-</div>
+    <div id = "titles"> 
+        <h4>{{ product.product_series.manufacturer.name }} {{ product.product_series.name }} ({{ product.product_series.skill_level }})</h4>
+    </div>
 
     <ul id = "looped_list">
         <li>Colour: {{ product.colour }}</li>
         <li>Wood: {{ product.wood }}</li>
-        {% if product.in_stock  <= 3%}
+        {% if product.in_stock  < 1  %}
+        <li style = "color: red; font-weight: bold">No. in stock: {{ product.in_stock }} (Out of stock) <img src="/static/img/out_of_stock_warning.png" alt="out_of_stock" width = 15px></li>
+        {% elif product.in_stock  <= 4 %}
         <li style = "color: orange; font-weight: bold">No. in stock: {{ product.in_stock }} (Low Stock) <img src="/static/img/low_stock_warning.png" alt="low_stock" width = 15px></li>
         {% else %}
         <li> No. in stock: {{ product.in_stock }}</li>
@@ -35,8 +32,8 @@
         <li>Selling Price: £{{ product.selling_price }}</li>
         <li>Product ID: {{ product.id }}</li>
     </ul>
-
+</div>
+</div>
 {% endif %}
-</div>  
 {% endfor %}
 {% endblock %}

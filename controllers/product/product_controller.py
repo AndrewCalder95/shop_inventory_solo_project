@@ -15,7 +15,7 @@ product_blueprint = Blueprint("product", __name__)
 @product_blueprint.route('/edit/add_product', methods=['GET'])
 def new_product():
     product_series = product_series_repository.select_all()
-    return render_template('edit/add/add_product.html', all_product_series = product_series)
+    return render_template('edit/add/product.html', all_product_series = product_series)
  
 @product_blueprint.route('/edit/add_product', methods = ['POST'])
 def add():
@@ -45,9 +45,15 @@ def update_product(id):
     product_series = request.form['product_series']
     product = Product(colour, wood, in_stock, purchase_cost, selling_price, product_series, id)
     product_repository.update(product)
-    return redirect ('/edit/update')
+    return redirect ('/edit/update/product')
 
 @product_blueprint.route('/edit/<id>/delete', methods=['POST']) 
 def delete_product(id):
     product_repository.delete(id)
-    return redirect('/edit/update')
+    return redirect('/edit/update/product')
+
+@product_blueprint.route('/edit/update/product')
+def pick_a_product():
+    products = product_repository.select_all()
+    product_series =  product_series_repository.select_all()
+    return render_template("edit/update/product_list.html", products = products, product_series = product_series)

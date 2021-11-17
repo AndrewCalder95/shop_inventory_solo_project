@@ -36,3 +36,8 @@ def save(product_series):
     id = results[0]['id']
     product_series.id = id
     return product_series
+
+def product_series(id):
+    sql = "DELETE FROM product_series WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

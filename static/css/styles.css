@@ -5,7 +5,6 @@ body {
 }
 
 header {
-    /* background-color: #ACC3FE; */
     font-family: 'Bungee Shade', cursive;
     background-image: url(/static/img/header_image.jpg);
     background-repeat: no-repeat;
@@ -63,6 +62,22 @@ form {
 
 }
 
+#product_list_main {
+    border: 3px solid #ACC3FE;
+    background-color: #d6e0fa;
+    border-radius: 30px;
+    width: 300px;
+    padding: 10px;
+    display: inline-block;
+    line-height: 18px;
+    margin: 10px;
+
+}
+
+#product_list:hover {
+    background-color: #c6d6ff;
+}
+
 #titles {
     text-align: center;
     text-decoration: underline;
@@ -82,4 +97,56 @@ form {
     overflow: hidden;
     line-height: 18px;
     margin: 10px;
+}
+
+#product_container{
+    display: flex;
+    justify-content: center;
+}
+
+#black_friday_deal {
+    border: 7px solid #ACC3FE;
+}
+
+#inventory_filter {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+#menu_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#menu_options {
+    border: 3px solid #ACC3FE;
+    background-color: white;
+    text-align: center;
+    border-radius: 100px;
+    width: 250px;
+    padding: 20px;
+    display: inline-block;
+    line-height: 18px;
+    margin: 10px;
+}
+
+#menu_options:hover {
+    background-color: #d6e0fa;
+}
+
+button {
+    border-radius: 5px;
+    font-family: "karla"; 
+    background-color: white;
+    border-color: #ACC3FE;
+    text-align: center;
+    display: inline-block;
+  }
+
+button:hover {
+    background-color: #c6d6ff;
 }
