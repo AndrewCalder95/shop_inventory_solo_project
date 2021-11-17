@@ -47,3 +47,8 @@ def update(product_series):
     sql = "UPDATE product_series SET (name, skill_level) = (%s, %s) WHERE id = %s"
     values = [product_series.name, product_series.skill_level, product_series.id]
     run_sql(sql, values)   
+
+def delete(id):
+    sql = "DELETE FROM product_series WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
