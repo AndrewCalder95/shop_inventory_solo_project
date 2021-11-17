@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Pick a product to update</h1>
+
+{% for series in product_series %}
+<div id = "product_list">
+    <div id = "titles"><h4> {{ series.manufacturer.name }} {{ series.name }}</h4></div>
+
+<div>
+    <ul id = "looped_list">
+        <li>Name: {{ series.name }}</li>
+        <li>Skill Level: {{ series.skill_level }}</li>
+        <a href="/edit/update/product_series/{{ series.id }}">Update</a>
+    </ul>
+</div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

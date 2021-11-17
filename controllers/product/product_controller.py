@@ -27,7 +27,7 @@ def add():
     product_series = product_series_repository.select(request.form["product_series_id"])
     product = Product(colour, wood, in_stock, purchase_cost, selling_price, product_series)
     product_repository.save(product)
-    return redirect('/edit/add_menu')
+    return redirect('/inventory')
 
 
 @product_blueprint.route('/edit/<id>/update')

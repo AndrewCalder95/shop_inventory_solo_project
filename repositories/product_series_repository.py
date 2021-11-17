@@ -24,7 +24,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        individual_product_series = Product_Series(row['name'], row['skill_level'], row['manufacturer_id'], row['id'])
+        manufacturer = manufacturer_repository.select(row['manufacturer_id'])
+        individual_product_series = Product_Series(row['name'], row['skill_level'], manufacturer, row['id'])
         product_series.append(individual_product_series)
     return product_series
 
@@ -41,3 +42,8 @@ def product_series(id):
     sql = "DELETE FROM product_series WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(product_series):
+    sql = "UPDATE product_series SET (name, skill_level) = (%s, %s) WHERE id = %s"
+    values = [product_series.name, product_series.skill_level, product_series.id]
+    run_sql(sql, values)   

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id = "product_container">
+<div id = "update_product">
+    <div id = "titles">    <h3>{{ product_series.manufacturer.name }} : {{ product_series.name}}</h3> </div>
+<br>
+
+<form action="/edit/update/product_series/{{product_series.id}}" method="post">
+    <input type="hidden" name ="manufacturer" value = "{{ product_series.manufacturer }}" >
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name ="name" value = "{{ product_series.name }}">
+    </div>
+    <br>
+    <div>
+        <label for="skill_level">Skill Level:</label>
+        <input type="text" name ="skill_level" value = "{{ product_series.skill_level }}"> 
+    </div>
+    <br>
+    <button type="submit">Update Product Series</button>
+
+</form>
+
+<!-- <form  action="/edit/{{product_series.id}}/delete" method = "post">
+    <button style="color:red" onclick="return confirm('Are you sure? This action cannot be undone!')"> Delete Product </button>
+</form> -->
+</div>
+</div>
+</form>
+{% endblock %}

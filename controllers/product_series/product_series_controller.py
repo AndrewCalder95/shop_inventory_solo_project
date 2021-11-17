@@ -1,3 +1,4 @@
+import pdb 
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from flask.templating import render_template_string
@@ -25,4 +26,24 @@ def add_product_series():
     manufacturer = manufacturer_repository.select(manufacturer_id)
     product_series = Product_Series(name, skill_level, manufacturer)
     product_series_repository.save(product_series)
+    return redirect ('/edit/add_menu')
+
+
+@product_series_blueprint.route('/edit/update/product_series') 
+def pick_a_product_series():
+    product_series =  product_series_repository.select_all()
+    return render_template('edit/update/product_series_list.html', product_series = product_series)
+
+@product_series_blueprint.route('/edit/update/product_series/<id>')
+def view_product_series(id):
+    product_series = product_series_repository.select(id)
+    return render_template('edit/update/product_series.html', product_series = product_series)
+
+@product_series_blueprint.route('/edit/update/product_series/<id>', methods = ['POST'])
+def update_product_series(id):
+    name = request.form['name']
+    skill_level = request.form['skill_level']
+    manufacturer = request.form['manufacturer']
+    product_series = Product_Series(name, skill_level, manufacturer, id)
+    product_series_repository.update(product_series)
     return redirect ('/inventory')
