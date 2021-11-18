@@ -46,7 +46,7 @@ def update_product_series(id):
     manufacturer = request.form['manufacturer']
     product_series = Product_Series(name, skill_level, manufacturer, id)
     product_series_repository.update(product_series)
-    return redirect ('/inventory')
+    return redirect ('/edit/update/product_series')
 
 @product_series_blueprint.route('/edit/product_series/<id>/delete', methods=['POST']) 
 def delete_product_series(id):

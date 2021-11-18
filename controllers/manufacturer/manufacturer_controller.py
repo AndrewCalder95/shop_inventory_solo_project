@@ -27,9 +27,3 @@ def add_manufacturer():
 def update_manufacturer():
     manufacturers = manufacturer_repository.select_all()
     return render_template ('edit/update/manufacturer.html', manufacturers = manufacturers)
-
-@manufacturer_blueprint.route('/edit/update/manufacturer', methods = ['POST'])
-def deactivate_manufacturer(id):
-    manufacturer = manufacturer_repository.select(id)
-    manufacturer_repository.mark_deactive(manufacturer)
-    return redirect ('/inventory' )

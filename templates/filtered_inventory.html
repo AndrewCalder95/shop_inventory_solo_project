@@ -13,7 +13,7 @@
 {% for product in products %}
 
 {% if manufacturer.id == product.product_series.manufacturer.id %}
-<div id = "product_list_main">
+<div id = "product_list">
     <div id = "titles"> 
         <h4>{{ product.product_series.manufacturer.name }} {{ product.product_series.name }} ({{ product.product_series.skill_level }})</h4>
     </div>
@@ -31,6 +31,7 @@
         <li>Puchase Cost: £{{ product.purchase_cost }}</li>
         <li>Selling Price: £{{ product.selling_price }}</li>
         <li>Product ID: {{ product.id }}</li>
+        <a href="/edit/{{product.id}}/update">Update</a>
     </ul>
 </div>
 </div>

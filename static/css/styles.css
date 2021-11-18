@@ -15,7 +15,7 @@ header {
     overflow: hidden;
 }
 
-header > img {
+#img_div {
     padding: 20px;
 }
 
@@ -67,17 +67,6 @@ form {
 
 }
 
-#product_list_main {
-    border: 3px solid #ACC3FE;
-    background-color: white;
-    border-radius: 30px;
-    width: 300px;
-    padding: 10px;
-    display: inline-block;
-    line-height: 18px;
-    margin: 10px;
-
-}
 
 #product_list:hover {
     background-color: #c6d6ff;
@@ -167,5 +156,5 @@ button {
   }
 
 button:hover {
-    background-color: #c6d6ff;
+    background-color: #B6E5F3;
 }
